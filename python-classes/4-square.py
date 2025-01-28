@@ -1,28 +1,39 @@
 #!/usr/bin/python3
+"""
+Module 4-square.py
+Provides an empty class Square that defines a square
+"""
 
 
 class Square:
-    def __init__(self, size=0):
-        """Initialise un carré avec une taille optionnelle."""
-        self.size = size  # Appelle le setter pour valider et initialiser la taille
+    """
+    Provides an empty class Square that defines a square
 
+    Attribute :
+        Size (private) of the square
+
+    Returns :
+        Current square area
+    """
+
+    def __init__(self, size=0):
+        """ Initialize the square """
+        self.size = size
 
     @property
     def size(self):
-        """Getter pour récupérer la taille du carré."""
-        return self._size
-
+        """ Getter of the size of the square """
+        return (self.__size)
 
     @size.setter
     def size(self, value):
-        """Setter pour valider et définir la taille du carré."""
-        if not isinstance(value, int):  # Vérifie si la taille est un entier
+        """ Set the value of the size only if it is a positive integer """
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if value < 0:  # Vérifie si la taille est positive ou nulle
+        if value < 0:
             raise ValueError("size must be >= 0")
-        self._size = value  # Assigne la taille validée
-
+        self.__size = value
 
     def area(self):
-        """Retourne l'aire du carré."""
-        return self._size ** 2  # Calcul de l'aire (côté au carré)
+        """ Return the area of the square """
+        return self.__size ** 2
