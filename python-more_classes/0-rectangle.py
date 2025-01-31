@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""Rectangle module.
-
-This module contains a class that defines a rectangle.
-
-"""
+"""J'avoue j'suis dans l'exces pour des ptits
+trajets jsors le féfé"""
 
 
-class Rectangle():
-    """Defines a rectangle."""
-
-    pass
+class Rectangle:
+    """J'avoue j'suis dans l'exces pour des ptits
+    trajets jsors le féfé"""
+    def __init__(self):
+        pass
