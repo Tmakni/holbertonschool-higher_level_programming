@@ -6,5 +6,4 @@ Provides an empty class Square that defines a square """
 class Rectangle:
     """Provides an empty class Rectangle that defines a rectangle"""
     def __init__(self):
-
         pass
