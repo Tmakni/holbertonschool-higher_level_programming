@@ -1,26 +1,14 @@
 #!/usr/bin/python3
-"""
-Module 7-base_geometry.py
-Provides a class Square BaseGeometry
-"""
+"""Ceci est une description"""
 
 
 class BaseGeometry:
-    """
-    Provides a class Square BaseGeometry
-    """
-
+    """Ceci est une description"""
     def area(self):
-        """
-        Raises an Exception
-        """
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """
-        Validates value
-        """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
+        if isinstance(value, int) == 0:
+            raise TypeError(f"{name} must be an integer")
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError(f"{name} must be greater than 0")
