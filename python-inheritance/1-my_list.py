@@ -1,19 +1,21 @@
 #!/usr/bin/python3
 """
-Module 1-my_list.py
-Provides a class MyList that inherits from list
+This module refers to the MyList class,
+that inherits from list
 """
 
 
 class MyList(list):
     """
-    Provides a class MyList that inherits from list
+    This class inherits from list and
+    will implement methods to apply on
     """
+
     def print_sorted(self):
         """
-        Print a sorted list of int
+        prints the sorted version of the object
         """
-        if isinstance(self, int) == 1:
-            raise TypeError("Ceci doit etre un entier ...")
+        if not isinstance(self, list):
+            raise AttributeError("instance must be a list")
         else:
             print(sorted(self))
