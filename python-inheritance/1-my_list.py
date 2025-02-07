@@ -13,4 +13,7 @@ class MyList(list):
         """
         Print a sorted list of int
         """
-        print(sorted(self))
+        if isinstance(self, int) == 1:
+            raise TypeError("Ceci doit etre un entier ...")
+        else:
+            print(sorted(self))
