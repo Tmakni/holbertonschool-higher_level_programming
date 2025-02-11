@@ -12,5 +12,4 @@ def to_json_string(my_obj):
     """
     Function
     """
-    i = json.dump(my_obj)
-    return (i)
+    return json.dumps(my_obj)
