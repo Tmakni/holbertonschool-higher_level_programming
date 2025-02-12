@@ -1,21 +1,29 @@
 #!/usr/bin/python3
-
-"""
-fonction
-"""
-
+"""fonction"""
 import sys
+import json
 
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-if __name__ == "__main__":
+def load_from_json_file(filename):
+    """fonction"""
+    with open(filename, 'r', encoding="utf-8") as file:
+        return json.load(file)
 
-    try:
-        items = load_from_json_file("add_item.json")
-    except Exception:
-        mylist = []
-if len(sys.argv) > 1:
-    for i in range(1, len(sys.argv)):
-        mylist.append(sys.argv[i])
-save_to_json_file(mylist, filename)
+
+def save_to_json_file(my_obj, filename):
+    """fonction"""
+    with open(filename, "w", encoding="utf-8") as file:
+        this = file.write(json.dumps(my_obj))
+    return this
+
+
+filename = "add_item.json"
+
+try:
+    items = load_from_json_file(filename)
+except FileNotFoundError:
+    items = []
+
+items.extend(sys.argv[1:])
+
+save_to_json_file(items, filename)
