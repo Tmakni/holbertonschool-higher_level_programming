@@ -7,14 +7,13 @@ Function
 """
 
 
-class CustomObject
+class CustomObject:
+    def __init__(self, name, age, is_student):
+        self.name = name
+        self.age = age
+        self.is_student = is_student
 
-    delf __init__(self, name, age, student)
-    self.name = name
-    self.age = age
-    self.is_student = is_student
-    
-    def serialize(self, filename)
+    def display(self):
         print(f"Name: {self.name}")
         print(f"Age: {self.age}")
         print(f"Is Student: {self.is_student}")
