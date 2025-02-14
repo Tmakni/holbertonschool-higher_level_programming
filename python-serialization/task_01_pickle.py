@@ -17,7 +17,6 @@ class CustomObject:
         print(f"Is Student: {self.is_student}")
 
     def serialize(self, filename):
-        """Serialize the current object instance and save it to a file."""
         try:
             with open(filename, 'wb') as file:
                 pickle.dump(self, file)
@@ -27,7 +26,6 @@ class CustomObject:
 
     @classmethod
     def deserialize(cls, filename):
-        """Deserialize an object from the file."""
         try:
             with open(filename, 'rb') as file:
                 return pickle.load(file)
