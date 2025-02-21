@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-We will use flask with jwt werkzeug ans flaskhttpauth
+Fonction
 """
 from flask import Flask, jsonify, request
 from flask_jwt_extended import JWTManager, \
@@ -8,7 +8,7 @@ from flask_jwt_extended import JWTManager, \
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.security import check_password_hash, generate_password_hash
 """
-Documentation
+Fonction
 """
 
 
