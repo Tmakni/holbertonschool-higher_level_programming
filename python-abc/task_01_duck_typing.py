@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-import math
 from abc import ABC, abstractmethod
+import math
 
 
 class Shape(ABC):
@@ -35,6 +35,7 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * (self.width + self.height)
 
-    def shape_info(shape):
-        print(f"Area: {shape.area()}")
-        print(f"Perimeter: {shape.perimeter()}")
+
+def shape_info(shape):
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
