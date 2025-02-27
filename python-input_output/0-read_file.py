@@ -2,6 +2,10 @@
 
 
 def read_file(filename=""):
-    """ Fonction qui lit un fichier texte (en encodage UTF-8) et affiche """
+    """
+    Reads a text file and prints its content to stdout.
+
+    :param filename: The path to the file (defaults to an empty string).
+    """
     with open(filename, "r", encoding="utf-8") as file:
         print(file.read())
