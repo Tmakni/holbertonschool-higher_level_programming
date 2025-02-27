@@ -4,7 +4,7 @@ Fonction
 """
 
 
-def read_file(filename="")
+def read_file(filename=""):
     """
     Reads a text file and prints its content to stdout
     """
