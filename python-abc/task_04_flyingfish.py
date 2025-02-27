@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 
 class Fish:
-    def swin(self):
+    def swim(self):
         print("The flying fish is soaring!")
 
 
