@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Fonction
+"""
 
 
 def class_to_json(obj):
