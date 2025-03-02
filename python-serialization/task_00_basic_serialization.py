@@ -11,12 +11,12 @@ def serialize_and_save_to_file(data, filename):
         """
         serialize save file
         """
-    with open(filename "w") as file:
-        json.dump(data)
-    pass
+        with open(filename "w") as file:
+            json.dump(data, file)
+            pass
 
 def load_and_deserialize(filename):
         """
         load serialize
         """
-    return json.load(filename)
+        return json.load(filename)
