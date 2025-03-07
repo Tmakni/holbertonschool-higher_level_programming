@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-
+"""
+Fonction
+"""
 import sys
 import MySQLdb
+"""
+Import sys, Mysqldb
+"""
 
 
 if __name__ == "__main__":
