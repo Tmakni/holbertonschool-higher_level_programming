@@ -18,3 +18,6 @@ cursor.execute("SELECT * FROM states ORDER BY id ASC;")
 states = cursor.fetchall()
 for state in states:
     print(state)
+
+    cursor.close()
+    db.close()
