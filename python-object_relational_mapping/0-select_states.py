@@ -10,6 +10,11 @@ Import sys, Mysqldb
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        print("Usage: ./0-select_states.py <mysql username>"
+              "<mysql password> <database name>")
+        sys.exit(1)
+
     username = sys.argv[1]
     password = sys.argv[2]
     name = sys.argv[3]
