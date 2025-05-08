@@ -1,0 +1,9 @@
+def print_matrix_integer(matrix=[[]]):
+    def print_row(row):
+        for i in range(len(row)):
+            if i < len(row) - 1:
+                print("{}".format(row[i]), end=" ")
+            else:
+                print("{}".format(row[i]))
+    for row in matrix:
+        print_row(row)
