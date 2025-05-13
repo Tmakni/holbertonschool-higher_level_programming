@@ -3,8 +3,8 @@ def print_matrix_integer(matrix=[[]]):
     def print_row(row):
         for i in range(len(row)):
             if i < len(row) - 1:
-                print("{}".format(row[i]), end=" ")
+                print("{:d}".format(row[i]), end=" ")
             else:
-                print("{}".format(row[i]))
+                print("{:d}".format(row[i]))
     for row in matrix:
         print_row(row)
