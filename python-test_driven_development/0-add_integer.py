@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 This module provides a function called add_integer.
+
 It adds two integers or floats and returns the result as an integer.
 """
 
