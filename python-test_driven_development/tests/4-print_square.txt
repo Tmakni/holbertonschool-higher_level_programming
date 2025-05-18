@@ -1,6 +1,9 @@
+>>> from 4-print_square import print_square
 >>> print_square(2)
 ##
 ##
+
 >>> print_square(1)
 #
+
 >>> print_square(0)
