@@ -1,4 +1,8 @@
 >>> from 4-print_square import print_square
+Traceback (most recent call last):
+  ...
+SyntaxError: invalid syntax
+
 >>> print_square(2)
 ##
 ##
