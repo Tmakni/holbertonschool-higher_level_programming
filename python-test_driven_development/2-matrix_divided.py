@@ -10,10 +10,15 @@ def matrix_divided(matrix, div):
     Divides all elements of a matrix by div and returns a new matrix.
     Elements are rounded to 2 decimal places.
     """
-    if (not isinstance(matrix, list) or
-        not all(isinstance(row, list) for row in matrix) or
-        not all(isinstance(el, (int, float)) for row in matrix for el in row)):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if (not isinstance(matrix, list)
+            or not all(isinstance(row, list) for row in matrix)
+            or not all(
+                isinstance(el, (int, float))
+                for row in matrix for el in row
+            )):
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of integers/floats"
+        )
 
     row_len = len(matrix[0])
     if any(len(row) != row_len for row in matrix):
