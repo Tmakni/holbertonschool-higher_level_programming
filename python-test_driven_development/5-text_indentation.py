@@ -3,6 +3,7 @@
 Prints text with 2 new lines after '.', '?', and ':'
 """
 
+
 def text_indentation(text):
     """
     Prints text with 2 new lines after '.', '?', and ':'
