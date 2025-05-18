@@ -10,3 +10,8 @@ readme
 | `self.__size = size`                       | Stocke la valeur `size` dans un attribut privé `__size` de l’objet courant.                                                |
 | `my_object = ClassName(params)`            | Création d’une instance (objet) de la classe `ClassName`, appelant automatiquement `__init__` avec les paramètres fournis. |
 | `my_object.__dict__`                       | Dictionnaire interne d’un objet qui montre ses attributs et leurs valeurs.                                                 |
+
+isinstance(size, int)
+Qu’est-ce que isinstance ?
+ C’est une fonction intégrée de Python qui sert à vérifier le type d’un objet.
+raise est utilisé pour lancer une exception (une erreur contrôlée).
