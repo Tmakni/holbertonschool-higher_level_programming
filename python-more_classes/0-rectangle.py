@@ -7,7 +7,7 @@ class Rectangle
 class Rectangle:
     """
     Classe Rectangle vide.
-    Cette classe définit un rectangle, mais sans attributs ni méthodes pour l'instant.
+    Cette classe définit un rectangle
     """
     def __init__(self):
         pass
