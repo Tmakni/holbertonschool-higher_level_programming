@@ -15,3 +15,8 @@ isinstance(size, int)
 Qu’est-ce que isinstance ?
  C’est une fonction intégrée de Python qui sert à vérifier le type d’un objet.
 raise est utilisé pour lancer une exception (une erreur contrôlée).
+
+
+Un getter (pour lire la taille)
+
+Un setter (pour modifier la taille avec validation)
