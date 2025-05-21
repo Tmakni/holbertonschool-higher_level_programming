@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-"""class"""
+"""
+Classe square
+"""
 
 
 class Square:
-    """square"""
-
+    """
+    Classe square
+    """
     def __init__(self, size=0, position=(0, 0)):
         self.size = size
         self.position = position
