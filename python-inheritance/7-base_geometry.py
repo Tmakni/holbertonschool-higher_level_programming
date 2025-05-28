@@ -2,8 +2,6 @@
 """BaseGeometry"""
 
 
-BaseGeometry = __import__('6-base_geometry').BaseGeometry
-
 class BaseGeometry:
     """BaseGeometry"""
     def area(self):
