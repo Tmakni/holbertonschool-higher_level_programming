@@ -8,4 +8,4 @@ def write_file(filename="", text=""):
     """
     with open(filename, "w", encoding="utf-8")as file:
         strw = file.write(text)
-        return(strw)
+        return (strw)
