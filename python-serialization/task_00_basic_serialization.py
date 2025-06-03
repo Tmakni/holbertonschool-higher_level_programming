@@ -9,6 +9,7 @@ def serialize_and_save_to_file(data, filename):
     with open(filename, 'w') as file:
         file.write(str(data).replace("'", '"'))
 
+
 def load_and_deserialize(filename):
     """Charge un fichier JSON et retourne un dictionnaire Python."""
     with open(filename, 'r') as file:
