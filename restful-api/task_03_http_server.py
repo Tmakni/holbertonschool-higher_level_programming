@@ -56,9 +56,7 @@ class http_SubClass(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"Endpoint not found")
 
+
 PORT = 8000
-
-
-with socketserver.TCPServer(("", PORT), http_SubClass) as httpd:
-    print("serving at port", PORT)
-    httpd.serve_forever()
+server = HTTPServer(("", PORT), NeuralRequest)
+server.serve_forever()
