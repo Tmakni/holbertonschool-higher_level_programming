@@ -1,8 +1,21 @@
+#!/usr/bin/python3
+"""
+API
+"""
+
+
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 class SimpleAPIHandler(BaseHTTPRequestHandler):
     def do_GET(self):
+        """
+        Handle GET requests for the API:
+        '/' returns a plain text greeting
+        '/data' returns a JSON object with sample data
+        '/status' returns a JSON status check
+        any other path returns a 404 error in JSON
+        """
         if self.path == '/':
             self.send_response(200)
             self.send_header('Content-Type', 'text/plain; charset=utf-8')
