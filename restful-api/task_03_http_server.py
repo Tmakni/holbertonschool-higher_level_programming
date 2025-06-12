@@ -38,7 +38,7 @@ class http_SubClass(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(data).encode("utf-8"))
 
         elif self.path == "/info":
-            info = {"version": "1.0", "description":
+            dataset = {"version": "1.0", "description":
                     "A simple API built with http.server"}
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
