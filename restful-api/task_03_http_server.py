@@ -24,37 +24,34 @@ class http_SubClass(http.server.BaseHTTPRequestHandler):
         '/status' : renvoie un simple message texte "OK"
         autre     : renvoie un code 404 et un message d'erreur
         """
-        if self.path == "/":
+        if self.path == '/':
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.send_header("Content-Type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"Hello, this is a simple API!")
-
-        elif self.path == "/data":
-            dataset = {"name": "John", "age": 30, "city": "New York"}
+            self.wfile.write("Hello, this is a simple API!".encode())
+        elif self.path == '/status':
             self.send_response(200)
-            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Type", "text/plain")
             self.end_headers()
-            self.wfile.write(json.dumps(data).encode("utf-8"))
-
-        elif self.path == "/info":
-            dataset = {"version": "1.0", "description":
-                    "A simple API built with http.server"}
+            self.wfile.write("OK".encode())
+        elif self.path == '/data':
             self.send_response(200)
-            self.send_header("Content-Type", "application/json; charset=utf-8")
+            object = {"name": "John", "age": 30, "city": "New York"}
+            self.send_header("Content-Type", "application/json")
             self.end_headers()
-            self.wfile.write(json.dumps(info).encode("utf-8"))
-
-        elif self.path == "/status":
+            self.wfile.write(json.dumps(object).encode())
+        elif self.path == '/info':
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            object = {"version": "1.0", "description": "A simple API built "
+                      "with http.server"}
+            self.send_header("Content-Type", "application/json")
             self.end_headers()
-            self.wfile.write(b"OK")
+            self.wfile.write(json.dumps(object).encode())
         else:
             self.send_response(404)
-            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.send_header("Content-Type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"Endpoint not found")
+            self.wfile.write("Endpoint not found".encode())
 
 
 PORT = 8000
