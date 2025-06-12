@@ -1,52 +1,59 @@
 #!/usr/bin/python3
 """
-Ceci est une API simple construite avec http.server et socketserver.
+Ceci est une API simple construite avec http.server.
+Démo minimaliste avec un handler GET et un serveur HTTP.
 """
-from http.server import HTTPServer, BaseHTTPRequestHandler
+import http.server
 import json
-"""
-Ceci est une API simple construite avec http.server et socketserver.
-"""
 
 
 class http_SubClass(http.server.BaseHTTPRequestHandler):
     """
-    Gestionnaire de requêtes HTTP GET pour notre API simple.
+    Gestionnaire de requêtes HTTP GET minimaliste.
+    Redéfinit do_GET pour renvoyer des réponses selon l'URL.
     """
+
     def do_GET(self):
         """
-        Traitement des requêtes GET
+        Traitement des requêtes GET :
+        - '/'       : message texte simple
+        - '/data'   : JSON d'exemple
+        - '/status' : texte OK
+        - autre     : 404 Not Found
         """
-        if self.path == '/':
+
+        if self.path == "/":
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain")
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
             self.end_headers()
-            self.wfile.write("Hello, this is a simple API!".encode())
-        elif self.path == '/status':
+            self.wfile.write(b"Hello, this is a simple API!")
+
+        elif self.path == "/data":
+            payload = {"name": "John", "age": 30, "city": "New York"}
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain")
+            self.send_header("Content-Type", "application/json; charset=utf-8")
             self.end_headers()
-            self.wfile.write("OK".encode())
-        elif self.path == '/data':
+            self.wfile.write(json.dumps(payload).encode("utf-8"))
+
+        elif self.path == "/status":
             self.send_response(200)
-            object = {"name": "John", "age": 30, "city": "New York"}
-            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
             self.end_headers()
-            self.wfile.write(json.dumps(object).encode())
-        elif self.path == '/info':
-            self.send_response(200)
-            object = {"version": "1.0", "description": "A simple API built "
-                      "with http.server"}
-            self.send_header("Content-Type", "application/json")
-            self.end_headers()
-            self.wfile.write(json.dumps(object).encode())
+            self.wfile.write(b"OK")
+
         else:
             self.send_response(404)
-            self.send_header("Content-Type", "text/plain")
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
             self.end_headers()
-            self.wfile.write("Endpoint not found".encode())
+            self.wfile.write(b"Endpoint not found")
 
 
-PORT = 8000
-server = HTTPServer(("", PORT), NeuralRequest)
-server.serve_forever()
+if __name__ == '__main__':
+    """
+    Lancement du serveur HTTP sur le port 8000.
+    """
+
+    PORT = 8000
+    server = http.server.HTTPServer(("", PORT), http_SubClass)
+    print(f"Serving on port {PORT}")
+    server.serve_forever()
