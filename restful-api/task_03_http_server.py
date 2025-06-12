@@ -8,6 +8,7 @@ import http.server
 import socketserver
 import json
 
+
 class http_SubClass(http.server.BaseHTTPRequestHandler):
     """
     Gestionnaire de requêtes HTTP GET pour notre API simple.
@@ -37,7 +38,8 @@ class http_SubClass(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(data).encode("utf-8"))
 
         elif self.path == "/info":
-            info = {"version": "1.0", "description": "A simple API built with http.server"}
+            info = {"version": "1.0", "description":
+                    "A simple API built with http.server"}
             self.send_response(200)
             self.send_header("Content-Type", "application/json; charset=utf-8")
             self.end_headers()
@@ -55,6 +57,8 @@ class http_SubClass(http.server.BaseHTTPRequestHandler):
             self.wfile.write(b"Endpoint not found")
 
     PORT = 8000
+
+
 with socketserver.TCPServer(("", PORT), http_SubClass) as httpd:
     print("serving at port", PORT)
     httpd.serve_forever()
