@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 """
-Lists states whose name matches exactly the 4th argument.
+Lists all states whose name matches exactly the 4th argument
 """
 import sys
 import MySQLdb
 
+
 if __name__ == "__main__":
-    user, pwd, db, state = sys.argv[1:5]
+    user, pwd, db, state_name = sys.argv[1:5]
 
     conn = MySQLdb.connect(
         host="localhost",
@@ -19,8 +20,9 @@ if __name__ == "__main__":
 
     cur = conn.cursor()
 
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;"\
-        .format(state)
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC;"\
+        .format(state_name)
+
     cur.execute(query)
 
     for row in cur.fetchall():
