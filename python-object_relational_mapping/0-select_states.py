@@ -15,3 +15,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id ASC;")
     tables = cursor.fetchall()
+    for table in tables:
+        print(table)
+    cursor.close()
+    db.close()
