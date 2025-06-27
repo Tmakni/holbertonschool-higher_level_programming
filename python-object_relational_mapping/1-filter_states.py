@@ -8,7 +8,7 @@ if __name__ == "__main__":
     user, pwd, db = sys.argv[1:4]
 
     conn = MySQLdb.connect(
-        host="127.0.0.1",    # TCP explicite
+        host="127.0.0.1",
         port=3306,
         user=user,
         passwd=pwd,
