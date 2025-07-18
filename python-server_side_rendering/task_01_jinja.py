@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """Simple Flask app for Jinja template practice."""
 
 
